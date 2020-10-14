@@ -31,6 +31,7 @@ class UserController extends Controller
             if ($user->user_id > 0) {
                 if (!isset($arrUserPoints[$user->user_id])) {
                     $arrUserPoints[$user->user_id] = [
+                        'id' => $user->user_id,
                         'left' => 0,
                         'right' => 0
                     ];
@@ -58,8 +59,8 @@ class UserController extends Controller
         }
 
         return response()->json([
-            'users' => $users,
-            'tree_users_points' => $arrUserPoints
+            'users' => array_reverse($users),
+            'tree_users_points' => array_reverse($arrUserPoints)
         ], 200);
     }
 
@@ -69,8 +70,7 @@ class UserController extends Controller
             'SELECT u.* ,(SELECT count(*)
                FROM users ui
                WHERE u.id = ui.user_id) AS indications
-            FROM users u
-            GROUP BY indications')
+            FROM users u')
         );
 
         return response()->json($users, 200);
