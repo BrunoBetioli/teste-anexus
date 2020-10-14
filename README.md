@@ -4,6 +4,7 @@
 Depois de baixar e instalar localmente, é preciso entrar rodar o comando "composer update" dentro da raíz do projeto. Após isso, basta criar uma base de dados no banco de dados e configurar um arquivo .env (Há um arquivo .env.example de exemplo).
 
 
+
 Ainda na raiz do projeto, mais alguns comandos precisam ser executados.
 
 "php artisan migrate" para criar a tabela de usuários dentro da base desejada
@@ -13,7 +14,9 @@ Ainda na raiz do projeto, mais alguns comandos precisam ser executados.
 "php artisan serve" para disponibilizar o projeto pela url http://localhost:8000
 
 
+
 Lista de rotas em formato API REST:
+
 
 
 GET /api/users - Retorna uma lista com todos os usuários
