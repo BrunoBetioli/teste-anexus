@@ -69,8 +69,7 @@ class UserController extends Controller
             'SELECT u.* ,(SELECT count(*)
                FROM users ui
                WHERE u.id = ui.user_id) AS indications
-            FROM users u
-            GROUP BY indications')
+            FROM users u')
         );
 
         return response()->json($users, 200);
