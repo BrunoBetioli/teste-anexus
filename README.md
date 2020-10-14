@@ -5,6 +5,7 @@ Depois de baixar e instalar localmente, é preciso entrar rodar o comando "compo
 
 
 Ainda na raiz do projeto, mais alguns comandos precisam ser executados.
+
 "php artisan migrate" para criar a tabela de usuários dentro da base desejada
 
 "php artisan db:seed" para popular a tabela de usuários com alguns usuários criados automaticamente.
